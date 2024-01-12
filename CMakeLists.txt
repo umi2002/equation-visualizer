@@ -8,13 +8,12 @@ endif()
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 
-set(SOURCE_FILES
+file(GLOB SOURCE_FILES
     #Source files
-    src/main.cpp
-    src/KeyStates.cpp
+    "src/*.cpp"
 
     #Header files
-    include/KeyStates.hpp
+    "include/*.hpp"
     )
 
 add_executable(Test ${SOURCE_FILES})
