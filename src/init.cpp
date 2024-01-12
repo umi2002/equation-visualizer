@@ -6,8 +6,7 @@
 
 void init() {
   glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH | GLUT_DOUBLE);
-  glutInitWindowSize(800, 800);
-  glutCreateWindow("Test");
+  glutCreateWindow("Visualizer");
   glClearColor(colors::BLACK[0], colors::BLACK[1], colors::BLACK[2],
                colors::BLACK[3]);
   glEnable(GL_CULL_FACE);

@@ -16,10 +16,10 @@ file(GLOB SOURCE_FILES
     "include/*.hpp"
     )
 
-add_executable(Test ${SOURCE_FILES})
+add_executable(Visualizer ${SOURCE_FILES})
 
 find_package(OpenGL REQUIRED)
 find_package(GLUT REQUIRED)
 include_directories(${OPENGL_INCLUDE_DIRS} ${GLUT_INCLUDE_DIRS})
 
-target_link_libraries(Test ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES})
+target_link_libraries(Visualizer ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES})
