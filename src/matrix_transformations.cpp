@@ -11,6 +11,10 @@ void Transform::translate(GLfloat x, GLfloat y, GLfloat z) {
   matrixStack.top() = glm::translate(matrixStack.top(), glm::vec3(x, y, z));
 }
 
+void Transform::scale(GLfloat x, GLfloat y, GLfloat z) {
+  matrixStack.top() = glm::scale(matrixStack.top(), glm::vec3(x, y, z));
+}
+
 void Transform::rotate(GLfloat angle, GLfloat x, GLfloat y, GLfloat z) {
   matrixStack.top() =
       glm::rotate(matrixStack.top(), glm::radians(angle), glm::vec3(x, y, z));
