@@ -1,5 +1,5 @@
 #include "../include/keyboard.hpp"
-#include <GL/gl.h>
+#include "../include/matrix_transformations.hpp"
 
 bool KeyStates::keyStates[256] = {false};
 
@@ -13,42 +13,42 @@ void KeyboardHandler::onKeyUp(unsigned char key, int x, int y) {
 
 void KeyboardHandler::reset() {
   if (KeyStates::keyStates[' ']) {
-    glLoadIdentity();
+    Transform::identity();
   }
 }
 
 void KeyboardHandler::rotate() {
   if (KeyStates::keyStates['l']) {
-    glRotatef(3.0f, 0.0f, 1.0f, 0.0f);
+    Transform::rotate(3.0f, 0.0f, 1.0f, 0.0f);
   }
 
   if (KeyStates::keyStates['h']) {
-    glRotatef(-3.0f, 0.0f, 1.0f, 0.0f);
+    Transform::rotate(-3.0f, 0.0f, 1.0f, 0.0f);
   }
 
   if (KeyStates::keyStates['k']) {
-    glRotatef(3.0f, 1.0f, 0.0f, 0.0f);
+    Transform::rotate(3.0f, 1.0f, 0.0f, 0.0f);
   }
 
   if (KeyStates::keyStates['j']) {
-    glRotatef(-3.0f, 1.0f, 0.0f, 0.0f);
+    Transform::rotate(-3.0f, 1.0f, 0.0f, 0.0f);
   }
 }
 
 void KeyboardHandler::translate() {
   if (KeyStates::keyStates['L']) {
-    glTranslatef(0.1f, 0.0f, 0.0f);
+      Transform::translate(0.1f, 0.0f, 0.0f);
   }
 
   if (KeyStates::keyStates['H']) {
-    glTranslatef(-0.1f, 0.0f, 0.0f);
+      Transform::translate(-0.1f, 0.0f, 0.0f);
   }
 
   if (KeyStates::keyStates['K']) {
-    glTranslatef(0.0f, 0.1f, 0.0f);
+      Transform::translate(0.0f, 0.1f, 0.0f);
   }
 
   if (KeyStates::keyStates['J']) {
-    glTranslatef(0.0f, -0.1f, 0.0f);
+      Transform::translate(0.0f, -0.1f, 0.0f);
   }
 }

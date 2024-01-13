@@ -1,12 +1,13 @@
 #include "../include/shapes.hpp"
 #include "../include/colors.hpp"
+#include <GL/gl.h>
 #include <GL/glut.h>
 #include <glm/glm.hpp>
 
 void drawTetrahedron() {
-  const float radius = sqrt(3.0f) / 2.0f;
-  const float height = sqrt(2.0f / 3.0f);
-  const float centerDistance = sqrt(3.0f / 4.0f) / 2.0f;
+  const GLfloat radius = sqrt(3.0f) / 2.0f;
+  const GLfloat height = sqrt(2.0f / 3.0f);
+  const GLfloat centerDistance = sqrt(3.0f / 4.0f) / 2.0f;
 
   const glm::vec3 apexVertex = glm::vec3(0, height / 2.0f, 0);
   const glm::vec3 baseFrontLeftVertex =
